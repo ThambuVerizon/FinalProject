@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.verizon.CommunicationService.model.EntCustomer;
 import org.verizon.CommunicationService.service.EntCustomerService;
-
 @RestController
 @RequestMapping("/api/EntCustomer")
 public class EntCustomerController {
