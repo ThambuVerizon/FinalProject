@@ -7,7 +7,6 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Servicee {
-	
 	@Id
 	private int service_id;
 	private String provision;
@@ -62,6 +61,8 @@ public class Servicee {
 	}
 	
 	
-
+	
+	
+	
 
 }

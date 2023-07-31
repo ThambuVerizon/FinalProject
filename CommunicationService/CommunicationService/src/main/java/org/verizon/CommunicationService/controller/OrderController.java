@@ -1,7 +1,6 @@
 package org.verizon.CommunicationService.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,19 +23,19 @@ public OrderController(OrderService orderservice) {
 	}
 	
 @RequestMapping("/allorders")
-public List<Orders>getAllOrders(){
-	return orderservice.getAllOrders();
+public List<Orders>getAllOrder(){
+	return orderservice.getAllOrder();
 }
 
-@PostMapping("/insertorder")
-public Orders createOrders(@RequestBody Orders order ) {
-	return orderservice.createOrders(order);
+@PostMapping("/insert")
+public Orders createOrder(@RequestBody Orders order ) {
+	return orderservice.createOrder(order);
 }
 
-/*@PostMapping("/{id}")
+@PostMapping("/{id}")
 public Orders updateOrder(@PathVariable int id, @RequestBody Orders order ) {
 	return orderservice.updateOrder(id,order);
-}*/
+}
 
 @DeleteMapping("/{id}")
 public void deleteOrder( @PathVariable int id) {

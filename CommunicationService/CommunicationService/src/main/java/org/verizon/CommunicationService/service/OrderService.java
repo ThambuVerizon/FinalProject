@@ -16,27 +16,27 @@ public class OrderService {
 		this.orderrepo = orderrepo;
 	}
 	
-	public List<Orders> getAllOrders(){
+	public List<Orders> getAllOrder(){
 		return orderrepo.findAll();
 		
 	}
 	
-	public Orders getOrdersById(Integer id) {
+	public Orders getOrderById(Integer id) {
 		return orderrepo.findById(id).orElse(null);
 	}
 	
-	public Orders createOrders (Orders order) { 
+	public Orders createOrder (Orders order) { 
 		return orderrepo.save(order); 
 		} 
 		
-	/*public Orders updateOrder(Integer id,Orders order) { 
+	public Orders updateOrder(Integer id,Orders order) { 
 		Orders existingOrder=orderrepo.findById(id).orElse(null); 
 		if(existingOrder!=null) { 
 		existingOrder.setPlan_id(order.getPlan_id());
 		return orderrepo.save(existingOrder); 
 		}
 		return null; 
-		}*/
+		}
 	
 	public void deleteOrder(Integer id) {
 		orderrepo.deleteById(id);

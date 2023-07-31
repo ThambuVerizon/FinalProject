@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.verizon.CommunicationService.model.Catalog;
+import org.verizon.CommunicationService.repo.CatalogRepo;
 import org.verizon.CommunicationService.service.CatalogService;
 
 @RestController
 @RequestMapping("/api/Catalog")
 public class CatalogController {
 	private CatalogService catalogservice;
+	private CatalogRepo catalogrepo;
 	
 @Autowired
 public CatalogController(CatalogService catalogservice) {
@@ -39,5 +41,11 @@ public Catalog updateCatalog(@PathVariable int id, @RequestBody Catalog catalog 
 @DeleteMapping("/{id}")
 public void deleteCatalog( @PathVariable int id) {
 	catalogservice.deleteCatalog(id);
+}
+
+@PostMapping("submit-plan")
+public String save (Catalog catalog) {
+	this.catalogrepo.save(catalog);
+return "home.html";
 }
 }

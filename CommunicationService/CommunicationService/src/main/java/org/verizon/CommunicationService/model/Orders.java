@@ -1,18 +1,15 @@
 package org.verizon.CommunicationService.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Orders {
 	
-	@Id 
+	@Id @GeneratedValue
 	private int order_id;
-	@ManyToOne
-	@JoinColumn(name = "plan_id")
-	private Catalog catalog;
+	private int plan_id;
 	
 	public Orders() {
 		
@@ -26,15 +23,13 @@ public class Orders {
 		this.order_id = order_id;
 	}
 
-	public Catalog getCatalog() {
-		return catalog;
+	public int getPlan_id() {
+		return plan_id;
 	}
 
-	public void setCatalog(Catalog catalog) {
-		this.catalog = catalog;
+	public void setPlan_id(int plan_id) {
+		this.plan_id = plan_id;
 	}
-
-	
 	
 	
 	

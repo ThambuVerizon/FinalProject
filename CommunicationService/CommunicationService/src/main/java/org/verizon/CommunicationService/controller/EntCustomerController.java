@@ -1,5 +1,7 @@
 package org.verizon.CommunicationService.controller;
+
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.verizon.CommunicationService.model.EntCustomer;
 import org.verizon.CommunicationService.service.EntCustomerService;
+
 @RestController
 @RequestMapping("/api/EntCustomer")
 public class EntCustomerController {
@@ -22,6 +25,7 @@ public class EntCustomerController {
 	public List<EntCustomer>getAllEntCustomer(){
 		return entcustomerservice.getAllEntCustomer();
 	}
+
 	@PostMapping("/insert")
 	public EntCustomer createEntCustomer(@RequestBody EntCustomer entcustomer ) {
 		return entcustomerservice.createEntCustomer(entcustomer);
@@ -32,4 +36,5 @@ public class EntCustomerController {
 	}
 	
 	
+
 }
